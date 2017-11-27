@@ -1,0 +1,112 @@
+//=================================
+// VARIABLES
+//=================================
+
+
+
+//=================================
+// GLOBALS
+//=================================
+
+/*
+
+@font-face {
+  font-family: 'Qanelas-light';
+  src: url("/fonts/QanelasSoftDEMO-UltraLight.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Qanelas-bold';
+  src: url("/fonts/QanelasSoftDEMO-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'DIN-Light';
+  src: url("/fonts/DINPro-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'DIN-Bold';
+  src: url("/fonts/DINPro-Bold.otf") format("opentype");
+}
+
+*/
+
+body, html {
+  padding: 0;
+  margin: 0;
+  height:100%;
+  outline: none;
+  overflow-x: hidden;
+}
+
+body {
+	background: url(//subtlepatterns.com/patterns/scribble_light.png);
+  font-family: Calluna, Arial, sans-serif;
+  min-height: 1000px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+#new {
+  margin-top: 40px;
+}
+
+#edit {
+  display: none;
+}
+
+#content {
+  visibility: hidden;
+}
+
+#upload:hover {
+  #content {
+    visibility: visible;
+  }
+}
+
+#uploads {
+	column-width: 320px;
+	column-gap: 15px;
+  width: 90%;
+	max-width: 1100px;
+	margin: 50px auto;
+}
+
+#upload {
+  height: 0;
+  margin-bottom: 15px;
+}
+
+div#uploads figure {
+  background: #fefefe;
+  margin: 0 2px 15px;
+  transition: opacity .4s ease-in-out;
+  display: inline-block;
+  column-break-inside: avoid;
+	transition: opacity .4s ease-in-out;
+}
+
+div#uploads figure img {
+	width: 100%; height: auto;
+	margin-bottom: 15px;
+}
+
+div#uploads figure figcaption {
+  font-size: .9rem;
+	color: #444;
+  line-height: 1.5;
+}
+
+div#uploads:hover figure:not(:hover) {
+	opacity: 0.4;
+}
+
+@media screen and (max-width: 750px) { 
+  #uploads { column-gap: 0px; }
+  #uploads figure { width: 100%; }
+}

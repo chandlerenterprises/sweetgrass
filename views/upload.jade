@@ -1,0 +1,42 @@
+extends ./head.jade
+append stylesheets
+  link(rel='stylesheet', href='/stylesheets/upload/output.css')
+
+append content
+  #progressBar
+
+  #new
+  
+    button POST ART
+    
+    #post
+      form(enctype="multipart/form-data", id="fileUploadForm")
+        input(placeholder='description of art piece').desc
+        input(type="file", id='fileSelect')
+        input(type="submit" value="post")
+        
+
+  #uploads
+
+    if !authenticated
+      #suggestion
+        h4 create an account to save & track multiple uploads!
+    else
+      if uploads[0]
+        each upload in uploads
+          figure
+            #upload(data-ID='#{upload._id}')
+              img(src="data:image/jpeg;base64,#{upload.buffer}")
+              #content
+                #delete
+                  button.delete delete
+                #description
+                  h5= upload.description
+                  button.edit edit
+                #edit
+                  input(value='#{upload.description}')
+                  button.cancel cancel
+                  button.update update
+      else
+        h4 you have no uploads
+  //  

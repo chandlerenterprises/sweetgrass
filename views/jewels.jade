@@ -1,0 +1,18 @@
+extends ./head.jade
+append stylesheets
+  link(rel='stylesheet', href='/stylesheets/upload/output.css')
+
+append content
+    h1 home page, load jewels here
+    
+    #new
+    
+      button POST ART
+      
+      #post
+        form(enctype="multipart/form-data", id="fileUploadForm")
+          input(placeholder='description of art piece').desc
+          input(type="file", id='fileSelect')
+          input(type="submit" value="post")
+          
+    #jewels
